@@ -76,13 +76,14 @@ body {
     width: 25%;
     min-width: 400px;
     display: flex;
+    gap: 0.8rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     background-color: white;
     color: rgb(50, 50, 50);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -97,6 +98,13 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
+}
+
+#buttons-output {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
 }
 
 .btn {
@@ -132,7 +140,13 @@ body {
 }
 
 .btn-copy {
-    display: none;
+    width: 100%;
+    padding: 0.8rem 0;
+    background-color: white;
+    border: 1px solid var(--fg-color);
+}
+
+.btn-clean {
     width: 100%;
     padding: 0.8rem 0;
     background-color: white;
@@ -151,10 +165,15 @@ body {
     background-color: rgba(10, 56, 113, 0.05);
 }
 
+.btn-clean:active {
+    background-color: rgba(10, 56, 113, 0.05);
+}
+
 #text-output {
     display: none;
     width: 100%;
     height: 100%;
+    padding-top: 2rem;
     font-family: inherit;
     font-size: 1.5rem;
     color: var(--fg-color);

@@ -67,13 +67,22 @@
                     id="text-output"
                     readonly
                 ></textarea>
-                <input
-                    type="submit"
-                    value="Copiar"
-                    class="btn btn-copy"
-                    id="btn-copy"
-                    onclick="copyText()"
-                />
+                <div id="buttons-output">
+                    <input
+                        type="submit"
+                        value="Limpiar"
+                        class="btn btn-clean"
+                        id="btn-clean"
+                        onclick="clearText()"
+                    />
+                    <input
+                        type="submit"
+                        value="Copiar"
+                        class="btn btn-copy"
+                        id="btn-copy"
+                        onclick="copyText()"
+                    />
+                </div>
             </div>
         </main>
         <hr />

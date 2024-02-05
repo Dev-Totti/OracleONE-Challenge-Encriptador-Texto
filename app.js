@@ -20,12 +20,13 @@ function emptyMSG(msg) {
     if (msg === "") {
         document.getElementById("noMSG").style.display = "block";
         document.getElementById("text-output").style.display = "none";
-        document.getElementById("btn-copy").style.display = "none";
+        document.getElementById("buttons-output").style.display = "none";
         return true;
     } else {
         document.getElementById("noMSG").style.display = "none";
         document.getElementById("text-output").style.display = "block";
-        document.getElementById("btn-copy").style.display = "block";
+        document.getElementById("buttons-output").style.display = "flex";
+
         return false;
     }
 }
@@ -83,4 +84,9 @@ function decryptMSG() {
 function copyText() {
     let text = document.getElementById("text-output").textContent;
     navigator.clipboard.writeText(text);
+}
+
+function clearText() {
+    document.getElementById("text-input").value = "";
+    encryptMSG();
 }
