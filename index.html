@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Encriptador de Texto</title>
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/4f184a4098.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <header>
+            <img src="img/logo.png" alt="logo-alura" class="logo" />
+        </header>
+        <main class="container">
+            <textarea
+                name="text-input"
+                id="text-input"
+                cols="30"
+                rows="10"
+                placeholder="Ingrese el texto aqui"
+            ></textarea>
+
+            <p>Solo letras minusculas y sin acento</p>
+            <div class="buttons-container">
+                <input
+                    type="submit"
+                    value="Encriptar"
+                    class="btn btn-encrypt"
+                    id="btn-encrypt"
+                />
+                <input
+                    type="submit"
+                    value="Desencriptar"
+                    class="btn btn-decrypt"
+                    id="btn-decrypt"
+                />
+            </div>
+            <div class="text-output">
+                <img src="img/nomsg.png" alt="no-message-logo" />
+                <p>Ningun mensaje fue encontrado</p>
+                <p>Ingrese el texto que desees encriptar o desencriptar.</p>
+            </div>
+        </main>
+        <footer>
+            <p>Challenge: Encriptador de Texto | Oracle ONE | Alura</p>
+            <p>
+                Elaborado por Cristian Villa |
+                <i class="fa-brands fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/Cristian-Villa-Dev"
+                    >Cristian Villa</a
+                >
+                |
+                <i class="fa-brands fa-github"></i>
+                <a href="https://www.github.com/Dev-Totti">Dev-Totti</a>
+            </p>
+        </footer>
+    </body>
+</html>
