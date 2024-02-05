@@ -102,17 +102,48 @@ body {
 .btn {
     width: 50%; /* To Check */
     padding: 1.5rem 0;
-    color: white;
-    background-color: var(--fg-color);
-    border: none;
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--fg-color);
     border-radius: 20px;
     font-size: 1.25rem; /* To Check */
     cursor: pointer;
+    transition: 0.2s;
 }
 
-.btn-decrypt {
-    background-color: var(--decrypt-color);
+.btn:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-encrypt {
+    background-color: var(--fg-color);
+    color: white;
+}
+
+.btn-copy {
+    display: none;
+    width: 100%;
+    background-color: white;
+    border: 1px solid var(--fg-color);
+}
+
+#text-output {
+    display: none;
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+    font-size: 1.5rem;
     color: var(--fg-color);
+    border: none;
+    resize: none;
+}
+
+#text-output:focus {
+    outline: none;
 }
 
 footer {

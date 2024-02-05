@@ -41,29 +41,50 @@
                         value="Encriptar"
                         class="btn btn-encrypt"
                         id="btn-encrypt"
+                        onclick="encryptMSG()"
                     />
                     <input
                         type="submit"
                         value="Desencriptar"
                         class="btn btn-decrypt"
                         id="btn-decrypt"
+                        onclick="decryptMSG()"
                     />
                 </div>
             </div>
             <div class="output-container">
-                <img
-                    src="img/nomsg.png"
-                    alt="no-message-logo"
-                    id="img-nomsg"
-                    width="200"
+                <div id="noMSG">
+                    <img
+                        src="img/nomsg.png"
+                        alt="no-message-logo"
+                        id="img-nomsg"
+                        class="no-msg"
+                        width="200"
+                    />
+                    <p class="large-bold">Ningun mensaje fue encontrado</p>
+                    <p>Ingrese el texto que desees encriptar o desencriptar.</p>
+                </div>
+                <textarea
+                    name="text-output"
+                    id="text-output"
+                    cols="30"
+                    rows="10"
+                    readonly
+                ></textarea>
+                <input
+                    type="submit"
+                    value="Copiar"
+                    class="btn btn-copy"
+                    id="btn-copy"
+                    onclick="copyText()"
                 />
-                <p class="large-bold">Ningun mensaje fue encontrado</p>
-                <p>Ingrese el texto que desees encriptar o desencriptar.</p>
             </div>
         </main>
         <hr />
         <footer>
-            <p>Challenge: Encriptador de Texto | Oracle ONE | Alura</p>
+            <p>
+                &copy Copyright 2024 - Encriptador de Texto | Oracle ONE | Alura
+            </p>
             <p>
                 Elaborado por Cristian Villa |
                 <i class="fa-brands fa-linkedin"></i>
@@ -75,5 +96,6 @@
                 <a href="https://www.github.com/Dev-Totti">Dev-Totti</a>
             </p>
         </footer>
+        <script src="app.js"></script>
     </body>
 </html>
