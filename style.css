@@ -1,0 +1,127 @@
+:root {
+    --bg-color: #f3f5fc;
+    --fg-color: #0a3871;
+    --decrypt-color: #d8dfe8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: "Inter", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+}
+
+.logo {
+    position: fixed;
+    top: 40px;
+    left: 80px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    width: 100%;
+    height: 100%;
+    /* height: calc(100vh - 40px); */
+    margin: 20px auto;
+}
+
+.input-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+#text-input {
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+    font-size: 2rem;
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+    border: none;
+    resize: none;
+}
+
+#text-input:focus {
+    outline: none;
+}
+
+#text-input::placeholder {
+    color: var(--fg-color);
+    opacity: 0.5;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.output-container {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#img-nomsg {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.large-bold {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    width: 50%; /* To Check */
+    padding: 1.5rem 0;
+    color: white;
+    background-color: var(--fg-color);
+    border: none;
+    border-radius: 20px;
+    font-size: 1.25rem; /* To Check */
+    cursor: pointer;
+}
+
+.btn-decrypt {
+    background-color: var(--decrypt-color);
+    color: var(--fg-color);
+}
+
+footer {
+    padding: 0.5rem;
+}
+
+footer p {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 2px;
+}
+
+footer a {
+    color: var(--fg-color);
+    text-decoration: none;
+    font-weight: 700;
+}
