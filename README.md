@@ -40,7 +40,7 @@ El mensaje descifrado se mostrará en el área etiquetada como "text-output".
 
 ## Capturas de Pantalla
 #### Vista Escritorio
-<img src="https://github.com/Dev-Totti/Challenge-01-Encriptador/assets/92545913/b31b9741-93bc-41e2-b113-b0d96fca66f1"">
+<img src="https://github.com/Dev-Totti/Challenge-01-Encriptador/assets/92545913/b31b9741-93bc-41e2-b113-b0d96fca66f1">
 
 ### Vista Tablet/Mobile
 <img src="https://github.com/Dev-Totti/Challenge-01-Encriptador/assets/92545913/d0bbaa41-30f0-4206-9280-b374e6ba011c" height="600px">
