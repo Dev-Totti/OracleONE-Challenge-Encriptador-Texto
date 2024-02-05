@@ -1,10 +1,34 @@
 const encryptDict = {
-    a: "ai",
     e: "enter",
     i: "imes",
+    a: "ai",
     o: "ober",
     u: "ufat",
 };
+
+const decryptDict = createDecryptDict();
+
+function createDecryptDict() {
+    const decryptDict = {};
+    for (let key in encryptDict) {
+        decryptDict[encryptDict[key]] = key;
+    }
+    return decryptDict;
+}
+
+function emptyMSG(msg) {
+    if (msg === "") {
+        document.getElementById("noMSG").style.display = "block";
+        document.getElementById("text-output").style.display = "none";
+        document.getElementById("btn-copy").style.display = "none";
+        return true;
+    } else {
+        document.getElementById("noMSG").style.display = "none";
+        document.getElementById("text-output").style.display = "block";
+        document.getElementById("btn-copy").style.display = "block";
+        return false;
+    }
+}
 
 function getMSG() {
     let msg = document.getElementById("text-input").value;
@@ -12,37 +36,49 @@ function getMSG() {
 }
 
 function encryptMSG() {
-    let msg = document.getElementById("text-input").value;
-    let encryptedMSG = "";
+    let msg = getMSG();
 
-    // Check for empty input
-    if (msg !== "") {
-        document.getElementById("noMSG").style.display = "none";
-        document.getElementById("text-output").style.display = "block";
-        document.getElementById("btn-copy").style.display = "block";
-
-        msg.normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .toLowerCase();
-
-        document.getElementById("text-output").textContent = msg;
-    } else {
-        document.getElementById("noMSG").style.display = "block";
-        document.getElementById("text-output").style.display = "none";
-        document.getElementById("btn-copy").style.display = "none";
+    if (emptyMSG(msg)) {
         return;
     }
 
-    // for (let char of msg) {
-    //     if (char in encryptDict) {
-    //         encryptedMSG += encryptDict[char];
-    //     } else {
-    //         encryptedMSG += char;
-    //     }
-    // }
+    msg = msg
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+
+    let encryptedMSG = msg.replace(/[eiaou]/g, function (char) {
+        if (char in encryptDict) {
+            return encryptDict[char];
+        } else {
+            return char;
+        }
+    });
+
+    document.getElementById("text-output").textContent = encryptedMSG;
 }
 
-function decryptMSG() {}
+function decryptMSG() {
+    let msg = getMSG();
+
+    if (emptyMSG(msg)) {
+        return;
+    }
+
+    msg.normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+
+    let decryptedMSG = msg.replace(/enter|imes|ai|ober|ufat/g, function (char) {
+        if (char in decryptDict) {
+            return decryptDict[char];
+        } else {
+            return char;
+        }
+    });
+
+    document.getElementById("text-output").textContent = decryptedMSG;
+}
 
 function copyText() {
     let text = document.getElementById("text-output").textContent;
