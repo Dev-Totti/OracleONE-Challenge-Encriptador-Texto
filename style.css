@@ -25,7 +25,7 @@ body {
     left: 80px;
 }
 
-.container {
+main {
     display: flex;
     justify-content: center;
     gap: 4rem;
@@ -39,7 +39,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-left: 100px;
+    margin-left: 20%;
     margin-top: 100px;
 }
 
@@ -67,7 +67,7 @@ body {
     color: dimgray;
 }
 
-.buttons-container {
+.buttons-input {
     display: flex;
     gap: 1rem;
 }
@@ -75,17 +75,23 @@ body {
 .output-container {
     width: 25%;
     min-width: 400px;
-    display: flex;
-    gap: 0.8rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    margin-right: 20px;
     background-color: white;
     color: rgb(50, 50, 50);
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#hideOutput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
 }
 
 #img-nomsg {
@@ -98,6 +104,29 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
+}
+
+#showOutput {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+#text-output {
+    width: 100%;
+    height: 100%;
+    padding-top: 2rem;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: var(--fg-color);
+    border: none;
+    resize: none;
+}
+
+#text-output:focus {
+    outline: none;
 }
 
 #buttons-output {
@@ -133,10 +162,18 @@ body {
     color: white;
 }
 
+.btn-encrypt:active {
+    background-color: rgba(10, 56, 113, 0.9);
+}
+
 .btn-decrypt {
     background-color: var(--decrypt-color);
     border: 1px solid var(--fg-color);
     color: var(--fg-color);
+}
+
+.btn-decrypt:active {
+    background-color: rgb(10, 56, 113, 0.2);
 }
 
 .btn-copy {
@@ -146,6 +183,10 @@ body {
     border: 1px solid var(--fg-color);
 }
 
+.btn-copy:active {
+    background-color: rgba(10, 56, 113, 0.05);
+}
+
 .btn-clean {
     width: 100%;
     padding: 0.8rem 0;
@@ -153,57 +194,46 @@ body {
     border: 1px solid var(--fg-color);
 }
 
-.btn-encrypt:active {
-    background-color: rgba(10, 56, 113, 0.9);
-}
-
-.btn-decrypt:active {
-    background-color: rgb(10, 56, 113, 0.2);
-}
-
-.btn-copy:active {
-    background-color: rgba(10, 56, 113, 0.05);
-}
-
 .btn-clean:active {
     background-color: rgba(10, 56, 113, 0.05);
 }
 
-#text-output {
-    display: none;
-    width: 100%;
-    height: 100%;
-    padding-top: 2rem;
-    font-family: inherit;
-    font-size: 1.5rem;
-    color: var(--fg-color);
-    border: none;
-    resize: none;
-}
-
-#text-output:focus {
-    outline: none;
-}
-
 footer {
-    padding: 0.5rem;
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+    padding: 0.25rem;
 }
 
 footer p {
     font-size: 0.8rem;
     text-align: center;
+    color: var(--bg-color);
     margin: 2px;
 }
 
 footer a {
+    color: var(--bg-color);
+    text-decoration: underline;
+}
+
+.popup {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    padding: 0.8rem 1.5rem;
+    background-color: rgba(192, 192, 192, 0.2);
     color: var(--fg-color);
-    text-decoration: none;
-    font-weight: 700;
+    border: 1px solid dimgrey;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 720px) {
-    .buttons-container {
+    .buttons-input {
         flex-direction: column;
+        gap: 0.6rem;
         align-items: center;
     }
 
@@ -212,8 +242,13 @@ footer a {
     }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1024px) {
     body {
+        width: 100%;
+        margin: auto;
+    }
+
+    header {
         width: 90%;
         margin: auto;
     }
@@ -225,10 +260,10 @@ footer a {
         margin: 50px auto 20px;
     }
 
-    .container {
+    main {
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        width: 90%;
         gap: 1rem;
     }
 
@@ -241,6 +276,7 @@ footer a {
     .output-container {
         width: 100%;
         height: 50%;
+        margin: auto;
     }
 
     #img-nomsg {

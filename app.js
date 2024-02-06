@@ -18,14 +18,12 @@ function createDecryptDict() {
 
 function emptyMSG(msg) {
     if (msg === "") {
-        document.getElementById("noMSG").style.display = "block";
-        document.getElementById("text-output").style.display = "none";
-        document.getElementById("buttons-output").style.display = "none";
+        document.getElementById("hideOutput").style.display = "flex";
+        document.getElementById("showOutput").style.display = "none";
         return true;
     } else {
-        document.getElementById("noMSG").style.display = "none";
-        document.getElementById("text-output").style.display = "block";
-        document.getElementById("buttons-output").style.display = "flex";
+        document.getElementById("hideOutput").style.display = "none";
+        document.getElementById("showOutput").style.display = "flex";
 
         return false;
     }
@@ -84,9 +82,30 @@ function decryptMSG() {
 function copyText() {
     let text = document.getElementById("text-output").textContent;
     navigator.clipboard.writeText(text);
+    popup("Texto copiado!");
+
+    let copyButton = document.getElementById("btn-copy");
+    originalValue = copyButton.value;
+
+    copyButton.value = "Copiado!";
+
+    setTimeout(() => {
+        copyButton.value = originalValue;
+    }, 1000);
 }
 
 function clearText() {
     document.getElementById("text-input").value = "";
     encryptMSG();
+}
+
+function popup(msg) {
+    let popup = document.createElement("div");
+    popup.innerHTML = msg;
+    popup.classList.add("popup");
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+        document.body.removeChild(popup);
+    }, 1500);
 }

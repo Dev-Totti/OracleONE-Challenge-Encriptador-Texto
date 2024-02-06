@@ -22,8 +22,8 @@
         <header>
             <img src="img/logo.png" alt="logo-alura" class="logo" />
         </header>
-        <main class="container">
-            <div class="input-container">
+        <main>
+            <section class="input-container">
                 <textarea
                     name="text-input"
                     id="text-input"
@@ -31,9 +31,9 @@
                 ></textarea>
                 <p class="restrictions-msg">
                     <i class="fa-solid fa-circle-exclamation"></i> Solo letras
-                    minusculas y sin acento
+                    minusculas y sin acento.
                 </p>
-                <div class="buttons-container">
+                <div class="buttons-input">
                     <input
                         type="submit"
                         value="Encriptar"
@@ -49,9 +49,9 @@
                         onclick="decryptMSG()"
                     />
                 </div>
-            </div>
-            <div class="output-container">
-                <div id="noMSG">
+            </section>
+            <section class="output-container">
+                <div id="hideOutput">
                     <img
                         src="img/nomsg.png"
                         alt="no-message-logo"
@@ -62,30 +62,32 @@
                     <p class="large-bold">Ningun mensaje fue encontrado</p>
                     <p>Ingrese el texto que desees encriptar o desencriptar.</p>
                 </div>
-                <textarea
-                    name="text-output"
-                    id="text-output"
-                    readonly
-                ></textarea>
-                <div id="buttons-output">
-                    <input
-                        type="submit"
-                        value="Limpiar"
-                        class="btn btn-clean"
-                        id="btn-clean"
-                        onclick="clearText()"
-                    />
-                    <input
-                        type="submit"
-                        value="Copiar"
-                        class="btn btn-copy"
-                        id="btn-copy"
-                        onclick="copyText()"
-                    />
+                <div id="showOutput">
+                    <textarea
+                        name="text-output"
+                        id="text-output"
+                        readonly
+                    ></textarea>
+                    <div id="buttons-output">
+                        <input
+                            type="submit"
+                            value="Limpiar"
+                            class="btn btn-clean"
+                            id="btn-clean"
+                            onclick="clearText()"
+                        />
+                        <input
+                            type="submit"
+                            value="Copiar"
+                            class="btn btn-copy"
+                            id="btn-copy"
+                            onclick="copyText()"
+                        />
+                    </div>
                 </div>
-            </div>
+            </section>
         </main>
-        <hr />
+        <!-- <hr /> -->
         <footer>
             <p>
                 &copy Copyright 2024 - Encriptador de Texto | Oracle ONE | Alura
