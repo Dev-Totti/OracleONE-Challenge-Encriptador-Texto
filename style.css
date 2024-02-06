@@ -231,6 +231,10 @@ footer a {
 }
 
 @media screen and (max-width: 720px) {
+    .output-container {
+        min-width: auto;
+    }
+
     .buttons-input {
         flex-direction: column;
         gap: 0.6rem;
