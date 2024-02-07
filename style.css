@@ -1,7 +1,12 @@
 :root {
     --bg-color: #f3f5fc;
-    --fg-color: #0a3871;
-    --decrypt-color: rgba(10, 56, 113, 0.1);
+    --text-color: #0a3871;
+    --output-color: white;
+    --output-text-color: rgb(50, 50, 50);
+    --footer-color: #0a3871;
+    --btn-active: rgb(10, 56, 113, 0.2);
+    --btn-decrypt-color: rgb(10, 56, 113, 0.1);
+    --btn-encrypt-active: rgb(10, 56, 113, 0.8);
 }
 
 * {
@@ -16,7 +21,7 @@ body {
     height: 100vh;
     font-family: "Inter", sans-serif;
     background-color: var(--bg-color);
-    color: var(--fg-color);
+    color: var(--text-color);
 }
 
 .logo {
@@ -48,7 +53,7 @@ main {
     height: 100%;
     font-family: inherit;
     font-size: 2rem;
-    color: var(--fg-color);
+    color: var(--text-color);
     background-color: var(--bg-color);
     border: none;
     resize: none;
@@ -59,7 +64,7 @@ main {
 }
 
 #text-input::placeholder {
-    color: var(--fg-color);
+    color: var(--text-color);
     opacity: 0.5;
 }
 
@@ -76,8 +81,8 @@ main {
     width: 25%;
     min-width: 400px;
     margin-right: 20px;
-    background-color: white;
-    color: rgb(50, 50, 50);
+    background-color: var(--output-color);
+    color: var(--output-text-color);
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -103,7 +108,6 @@ main {
 .large-bold {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
 }
 
 #showOutput {
@@ -120,7 +124,8 @@ main {
     padding-top: 2rem;
     font-family: inherit;
     font-size: 1.5rem;
-    color: var(--fg-color);
+    background-color: var(--output-color);
+    color: var(--text-color);
     border: none;
     resize: none;
 }
@@ -132,17 +137,18 @@ main {
 #buttons-output {
     display: flex;
     flex-direction: row;
-    gap: 0.5rem;
+    gap: 1rem;
     width: 100%;
 }
 
 .btn {
-    width: 50%; /* To Check */
+    width: 50%;
     padding: 1.4rem 0;
-    color: var(--fg-color);
+    color: var(--output-color);
+    background-color: var(--text-color);
     border: none;
     border-radius: 20px;
-    font-size: 1.25rem; /* To Check */
+    font-size: 1.25rem;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -154,65 +160,61 @@ main {
 
 .btn:active {
     transform: scale(0.98);
-    transition: 0s;
-}
-
-.btn-encrypt {
-    background-color: var(--fg-color);
-    color: white;
+    transition: 0.1s;
 }
 
 .btn-encrypt:active {
-    background-color: rgba(10, 56, 113, 0.9);
+    background-color: var(--btn-encrypt-active);
 }
 
 .btn-decrypt {
-    background-color: var(--decrypt-color);
-    border: 1px solid var(--fg-color);
-    color: var(--fg-color);
+    background-color: var(--btn-decrypt-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
 }
 
 .btn-decrypt:active {
-    background-color: rgb(10, 56, 113, 0.2);
+    background-color: var(--btn-active);
 }
 
 .btn-copy {
     width: 100%;
     padding: 0.8rem 0;
-    background-color: white;
-    border: 1px solid var(--fg-color);
+    background-color: var(--output-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
 }
 
 .btn-copy:active {
-    background-color: rgba(10, 56, 113, 0.05);
+    background-color: var(--btn-active);
 }
 
 .btn-clean {
     width: 100%;
     padding: 0.8rem 0;
-    background-color: white;
-    border: 1px solid var(--fg-color);
+    background-color: var(--output-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
 }
 
 .btn-clean:active {
-    background-color: rgba(10, 56, 113, 0.05);
+    background-color: var(--btn-active);
 }
 
 footer {
-    background-color: var(--fg-color);
-    color: var(--bg-color);
+    background-color: var(--footer-color);
+    color: white;
     padding: 0.25rem;
 }
 
 footer p {
     font-size: 0.8rem;
     text-align: center;
-    color: var(--bg-color);
     margin: 2px;
 }
 
 footer a {
-    color: var(--bg-color);
+    color: white;
     text-decoration: underline;
 }
 
@@ -222,7 +224,7 @@ footer a {
     left: 50%;
     padding: 0.8rem 1.5rem;
     background-color: rgba(192, 192, 192, 0.2);
-    color: var(--fg-color);
+    color: var(--text-color);
     border: 1px solid dimgrey;
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
@@ -230,6 +232,7 @@ footer a {
     transform: translate(-50%, -50%);
 }
 
+/* Mobile View */
 @media screen and (max-width: 720px) {
     .output-container {
         min-width: auto;
@@ -246,6 +249,7 @@ footer a {
     }
 }
 
+/* Tablet View */
 @media screen and (max-width: 1024px) {
     body {
         width: 100%;
@@ -285,5 +289,31 @@ footer a {
 
     #img-nomsg {
         display: none;
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: rgb(45, 45, 45);
+        --text-color: silver;
+        --output-color: rgb(60, 60, 60);
+        --output-text-color: silver;
+        --footer-color: rgb(60, 60, 60);
+        --btn-active: rgba(94, 94, 94, 0.8);
+        --btn-decrypt-color: rgb(80, 80, 80);
+        --btn-encrypt-active: rgba(255, 255, 255, 0.8);
+    }
+
+    .logo {
+        filter: grayscale(100%) invert(100%);
+    }
+
+    .restrictions-msg {
+        color: silver;
+    }
+
+    .btn-decrypt {
+        border: none;
     }
 }
