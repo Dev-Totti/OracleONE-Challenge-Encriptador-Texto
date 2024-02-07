@@ -7,9 +7,10 @@
 Este proyecto es parte del programa Oracle ONE: Next Education en colaboración con Alura. El objetivo de esta aplicación es cifrar y descifrar mensajes utilizando un diccionario de sustitución. La aplicación toma un mensaje de entrada y luego realiza el cifrado o descifrado según la opción seleccionada.
 
 ### Características Principales
-* Cifrado de Mensajes: La función encryptMSG toma un mensaje de entrada y lo cifra según un diccionario predefinido de sustitución.
-* Descifrado de Mensajes: La función decryptMSG realiza el proceso inverso, descifrando un mensaje cifrado utilizando el mismo diccionario.
-* Interfaz de Usuario Amigable: La interfaz de usuario proporciona una experiencia sencilla para ingresar, cifrar, descifrar y copiar mensajes.
+* **Cifrado de Mensajes**: La función encryptMSG toma un mensaje de entrada y lo cifra según un diccionario predefinido de sustitución.
+* **Descifrado de Mensajes**: La función decryptMSG realiza el proceso inverso, descifrando un mensaje cifrado utilizando el mismo diccionario.
+* **Interfaz de Usuario Amigable**: La interfaz de usuario proporciona una experiencia sencilla para ingresar, cifrar, descifrar y copiar mensajes.
+* **Modo Oscuro/Dark-Mode**: La interfaz se adapta automáticamente a las preferencias del usuario o al entorno de visualización, cambiando a un esquema de colores oscuros para mejorar la legibilidad en condiciones de poca luz.
 
 ### GitHub Page
 https://dev-totti.github.io/Challenge-01-Encriptador/
@@ -45,3 +46,6 @@ El mensaje descifrado se mostrará en el área etiquetada como "text-output".
 ### Vista Tablet | Mobile
 <img src="https://github.com/Dev-Totti/Challenge-01-Encriptador/assets/92545913/d0bbaa41-30f0-4206-9280-b374e6ba011c" height="600px">
 <img src="https://github.com/Dev-Totti/Challenge-01-Encriptador/assets/92545913/2824c4a5-790e-403a-9a0b-8eec6afa3ba4" height="600px">
+
+### Modo Oscuro / Dark-Mode
+<img src="https://github.com/Dev-Totti/Challenge-01-Encriptador/assets/92545913/f8029c65-1b4d-4c48-83f8-04dd0d16c080">
