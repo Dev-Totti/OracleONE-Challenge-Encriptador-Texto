@@ -4,6 +4,7 @@
     --output-color: white;
     --output-text-color: rgb(50, 50, 50);
     --footer-color: #0a3871;
+    --footer-text-color: white;
     --btn-active: rgb(10, 56, 113, 0.2);
     --btn-decrypt-color: rgb(10, 56, 113, 0.1);
     --btn-encrypt-active: rgb(10, 56, 113, 0.8);
@@ -13,6 +14,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
 body {
@@ -155,7 +158,7 @@ main {
 
 .btn:hover {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .btn:active {
@@ -203,18 +206,17 @@ main {
 
 footer {
     background-color: var(--footer-color);
-    color: white;
-    padding: 0.25rem;
+    color: var(--footer-text-color);
+    padding: 0.4rem;
 }
 
 footer p {
     font-size: 0.8rem;
     text-align: center;
-    margin: 2px;
 }
 
 footer a {
-    color: white;
+    color: var(--footer-text-color);
     text-decoration: underline;
 }
 
@@ -307,13 +309,14 @@ footer a {
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-color: rgb(45, 45, 45);
+        --bg-color: rgb(25, 25, 25);
         --text-color: silver;
-        --output-color: rgb(60, 60, 60);
+        --output-color: rgb(40, 40, 40);
         --output-text-color: silver;
-        --footer-color: rgb(60, 60, 60);
+        --footer-color: rgb(40, 40, 40);
+        --footer-text-color: silver;
         --btn-active: rgba(94, 94, 94, 0.8);
-        --btn-decrypt-color: rgb(80, 80, 80);
+        --btn-decrypt-color: rgb(60, 60, 60);
         --btn-encrypt-active: rgba(255, 255, 255, 0.8);
     }
 
