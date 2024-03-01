@@ -60,6 +60,7 @@ main {
     background-color: var(--bg-color);
     border: none;
     resize: none;
+    text-transform: lowercase;
 }
 
 #text-input:focus {
