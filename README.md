@@ -49,3 +49,9 @@ El mensaje descifrado se mostrará en el área etiquetada como "text-output".
 
 ### Modo Oscuro / Dark-Mode
 <img src="https://github.com/Dev-Totti/Challenge-01-Encriptador/assets/92545913/f8029c65-1b4d-4c48-83f8-04dd0d16c080">
+
+---
+<p align="center">
+  <img src="https://github.com/Dev-Totti/OracleONE-Challenge-Encriptador/assets/92545913/313bbac8-302f-494b-a8e0-1afa1798eeea" width="300px">
+</p>
+
